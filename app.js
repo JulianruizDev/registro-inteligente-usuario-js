@@ -20,10 +20,14 @@ function main() {
 
   rl.question("Ingrese su nombre: ", function(nombre) {
 
-    if (!validarNombre(nombre)) {
-      rl.close();
-      return;
-    }
+let resultadoNombre = validarNombre(nombre);
+
+if (!resultadoNombre.valido) {
+  rl.close();
+  return;
+}
+
+nombre = resultadoNombre.nombre;
 
     rl.question("Ingrese su edad: ", function(edadInput) {
 

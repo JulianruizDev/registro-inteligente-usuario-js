@@ -19,8 +19,14 @@ function validarNombre(nombreInput) {
     return false;
   }
 
-  return true;
+nombre =
+  nombre.charAt(0).toUpperCase() +
+  nombre.slice(1).toLowerCase();
 
+ return {
+  valido: true,
+  nombre: nombre
+};
 }
 
 module.exports = validarNombre;
