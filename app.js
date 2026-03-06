@@ -96,7 +96,8 @@ function main() {
 
       let categoria = determinarCategoria(edad);
 
-      console.log("Usuario registrado");
+console.log("\nUsuario registrado correctamente");
+console.log("-----------------------------");
       console.log("Nombre:", nombre);
       console.log("Edad:", edad);
       console.log("Categoria:", categoria);
