@@ -7,8 +7,10 @@ function validarNombre(nombreInput) {
     return false;
   }
 
-  if (nombre.includes(" ")) {
-    console.log("El nombre no debe contener espacios");
+  const patronSoloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/;
+
+  if (!patronSoloLetras.test(nombre)) {
+    console.log("El nombre solo puede contener letras");
     return false;
   }
 
