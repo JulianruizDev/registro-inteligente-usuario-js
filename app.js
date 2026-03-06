@@ -1,9 +1,26 @@
 // Registro Inteligente de Usuario
 
-function validarNombre(nombre) {
-  return nombre.length >= 3;
-}
+function validarNombre(nombreInput) {
 
+  let nombre = nombreInput.trim();
+
+  if (nombre === "") {
+    console.log("Nombre vacío");
+    return false;
+  }
+
+  if (nombre.includes(" ")) {
+    console.log("El nombre no debe contener espacios");
+    return false;
+  }
+
+  if (nombre.length < 3) {
+    console.log("Nombre demasiado corto");
+    return false;
+  }
+
+  return true;
+}
 function validarEdad(edad) {
   return edad >= 0 && edad <= 120;
 }
