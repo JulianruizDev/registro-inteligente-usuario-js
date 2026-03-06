@@ -1,81 +1,41 @@
-📋 Registro Inteligente de Usuario en JavaScript
+# 🧾 Registro Inteligente de Usuario en JavaScript
 
-Proyecto de aprendizaje que simula el registro de un usuario aplicando validaciones de nombre y edad desde la consola.
+Proyecto de aprendizaje que simula el registro de un usuario desde consola, aplicando validaciones de nombre y edad.
 
-Hace parte de mi proceso de formación como Desarrollador de Software Junior, enfocado en construir bases sólidas, comprender la lógica del código y organizar mejor la estructura de un programa.
-
----
-
-🎯 Objetivos
-
-Practicar JavaScript desde cero  
-Aplicar validaciones de datos del usuario  
-Separar responsabilidades en funciones  
-Organizar la estructura del proyecto  
-Usar Git y GitHub con commits claros  
+Hace parte de mi proceso de formación como Desarrollador de Software Junior, enfocado en construir bases sólidas y comprender la lógica detrás del código.
 
 ---
 
-🧠 ¿Qué hace la aplicación?
+## 🎯 Objetivos
 
-Solicita el nombre del usuario desde consola  
-Valida que el nombre sea correcto  
-Solicita la edad del usuario  
-Valida que la edad sea válida  
-Clasifica al usuario según su categoría de edad  
-
-Categorías utilizadas:
-
-Niño → 0 a 12 años  
-Adolescente → 13 a 17 años  
-Adulto → 18 a 64 años  
-Tercera edad → 65 años o más  
+- Practicar JavaScript desde consola  
+- Aplicar validaciones de datos del usuario  
+- Separar la lógica del programa en funciones  
+- Organizar mejor la estructura del proyecto  
+- Usar Git y GitHub con commits claros  
 
 ---
 
-▶️ Ejemplo de ejecución
+## 🧠 ¿Qué hace la aplicación?
 
-Ingrese su nombre: Julian  
-Ingrese su edad: 23  
-
-Usuario registrado correctamente  
------------------------------  
-Fecha de registro: 2026-03-07 21:30  
-
-Datos del usuario  
----------------------  
-Nombre: Julian  
-Edad: 23  
-Categoría: Adulto  
-
-Registro completado correctamente.  
-Gracias por usar el sistema.
+- Solicita el nombre del usuario desde consola  
+- Valida que el nombre solo contenga letras  
+- Solicita la edad del usuario  
+- Valida que la edad sea válida  
+- Clasifica al usuario según su categoría de edad  
+- Muestra la fecha de registro del usuario  
 
 ---
 
-🛠️ Tecnologías utilizadas
+## 🛠️ Tecnologías usadas
 
-JavaScript  
-Node.js  
-Git  
-GitHub  
-
----
-
-📂 Estructura del proyecto
-
-registro-inteligente-usuario-js
-
-app.js  
-services  
-validarNombre.js  
-validarEdad.js  
-determinarCategoria.js  
+- JavaScript  
+- Node.js  
+- Git  
+- GitHub  
 
 ---
 
-📝 Notas
+## 📝 Notas finales
 
-Este proyecto fue desarrollado como parte de mi proceso de aprendizaje para convertirme en Desarrollador de Software Junior, priorizando la comprensión del código, la lógica de programación y la organización básica de un sistema.
-
-Proyecto finalizado.
+Proyecto realizado como parte de mi proceso de aprendizaje para convertirme en Desarrollador de Software Junior, priorizando la comprensión del código, la lógica de programación y la organización básica de un sistema.
