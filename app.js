@@ -16,42 +16,54 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-function main() {
+function pedirNombre() {
 
   rl.question("Ingrese su nombre: ", function(nombre) {
 
-let resultadoNombre = validarNombre(nombre);
+    let resultadoNombre = validarNombre(nombre);
 
-if (!resultadoNombre.valido) {
-  rl.close();
-  return;
-}
+    if (!resultadoNombre.valido) {
+      console.log(resultadoNombre.error);
+      return pedirNombre();
+    }
 
-nombre = resultadoNombre.nombre;
-
-    rl.question("Ingrese su edad: ", function(edadInput) {
-
-      if (!validarEdad(edadInput)) {
-        rl.close();
-        return;
-      }
-
-      let edad = Number(edadInput);
-
-      let categoria = determinarCategoria(edad);
-
-      console.log("\nUsuario registrado correctamente");
-      console.log("-----------------------------");
-      console.log("Nombre:", nombre);
-      console.log("Edad:", edad);
-      console.log("Categoria:", categoria);
-
-      rl.close();
-
-    });
+    pedirEdad(resultadoNombre.nombre);
 
   });
 
+}
+
+function pedirEdad(nombre) {
+
+  rl.question("Ingrese su edad: ", function(edadInput) {
+
+    if (!validarEdad(edadInput)) {
+      return pedirEdad(nombre);
+    }
+
+    let edad = Number(edadInput);
+
+    if (edad < 18) {
+      console.log("El usuario debe ser mayor de edad");
+      return pedirEdad(nombre);
+    }
+
+    let categoria = determinarCategoria(edad);
+
+    console.log("\nUsuario registrado correctamente");
+    console.log("-----------------------------");
+    console.log("Nombre:", nombre);
+    console.log("Edad:", edad);
+    console.log("Categoria:", categoria);
+
+    rl.close();
+
+  });
+
+}
+
+function main() {
+  pedirNombre();
 }
 
 main();
