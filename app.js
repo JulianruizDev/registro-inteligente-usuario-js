@@ -55,10 +55,11 @@ let fecha = new Date();
 console.log("\nUsuario registrado correctamente");
 console.log("-----------------------------");
 console.log("Fecha de registro:", fecha.toLocaleString());
+console.log("\nDatos del usuario");
+console.log("---------------------");
 console.log("Nombre:", nombre);
 console.log("Edad:", edad);
-console.log("Categoria:", categoria);
-
+console.log("Categoría:", categoria);
 rl.close();
 
   });
