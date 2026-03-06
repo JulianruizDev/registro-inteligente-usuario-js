@@ -1,3 +1,5 @@
+// Regla del sistema: solo usuarios mayores de edad pueden registrarse
+
 function validarEdad(edadInput) {
 
   let edad = Number(edadInput);
