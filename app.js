@@ -1,4 +1,10 @@
 // Registro Inteligente de Usuario
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 function validarNombre(nombreInput) {
 
@@ -70,4 +76,35 @@ function main() {
   console.log("Categoria:", categoria);
 }
 
-main();
+function main() {
+
+  rl.question("Ingrese su nombre: ", function(nombre) {
+
+    if (!validarNombre(nombre)) {
+      rl.close();
+      return;
+    }
+
+    rl.question("Ingrese su edad: ", function(edadInput) {
+
+      if (!validarEdad(edadInput)) {
+        rl.close();
+        return;
+      }
+
+      let edad = Number(edadInput);
+
+      let categoria = determinarCategoria(edad);
+
+      console.log("Usuario registrado");
+      console.log("Nombre:", nombre);
+      console.log("Edad:", edad);
+      console.log("Categoria:", categoria);
+
+      rl.close();
+
+    });
+
+  });
+
+}
