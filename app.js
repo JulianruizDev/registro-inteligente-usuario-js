@@ -37,11 +37,14 @@ function pedirEdad(nombre) {
 
   rl.question("Ingrese su edad: ", function(edadInput) {
 
-    if (!validarEdad(edadInput)) {
-      return pedirEdad(nombre);
-    }
+  let resultadoEdad = validarEdad(edadInput);
 
-    let edad = Number(edadInput);
+if (!resultadoEdad.valido) {
+  console.log(resultadoEdad.error);
+  return pedirEdad(nombre);
+}
+
+let edad = resultadoEdad.edad;
 
     if (edad < 18) {
       console.log("El usuario debe ser mayor de edad");
