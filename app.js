@@ -5,6 +5,7 @@
 // Las validaciones y lógica del negocio
 // se encuentran separadas en la carpeta services.
 // --------------------------------------------------
+
 const readline = require("readline");
 
 const validarNombre = require("./services/validarNombre");
@@ -16,59 +17,67 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// ---------------------------
+// PEDIR NOMBRE
+// ---------------------------
 function pedirNombre() {
 
   rl.question("Ingrese su nombre: ", function(nombre) {
 
-let resultadoNombre = validarNombre(nombre);
+    const resultadoNombre = validarNombre(nombre);
 
-if (!resultadoNombre.valido) {
-  console.log(resultadoNombre.error);
-  return pedirNombre();
-}
+    if (!resultadoNombre.valido) {
+      console.log(resultadoNombre.error);
+      return pedirNombre();
+    }
 
-pedirEdad(resultadoNombre.nombre);
+    pedirEdad(resultadoNombre.nombre);
 
   });
 
 }
 
+// ---------------------------
+// PEDIR EDAD
+// ---------------------------
 function pedirEdad(nombre) {
 
   rl.question("Ingrese su edad: ", function(edadInput) {
 
-  let resultadoEdad = validarEdad(edadInput);
+    const resultadoEdad = validarEdad(edadInput);
 
-if (!resultadoEdad.valido) {
-  console.log(resultadoEdad.error);
-  return pedirEdad(nombre);
-}
-
-let edad = resultadoEdad.edad;
-
-    if (edad < 18) {
-      console.log("El usuario debe ser mayor de edad");
+    if (!resultadoEdad.valido) {
+      console.log(resultadoEdad.error);
       return pedirEdad(nombre);
     }
 
-let categoria = determinarCategoria(edad);
+    const edad = resultadoEdad.edad;
 
-let fecha = new Date();
+    const categoria = determinarCategoria(edad);
+    const fecha = new Date();
 
-console.log("\nUsuario registrado correctamente");
-console.log("-----------------------------");
-console.log("Fecha de registro:", fecha.toLocaleString());
-console.log("\nDatos del usuario");
-console.log("---------------------");
-console.log("Nombre:", nombre);
-console.log("Edad:", edad);
-console.log("Categoría:", categoria);
-rl.close();
+    console.log("\nUsuario registrado correctamente");
+    console.log("-----------------------------");
+    console.log("Fecha de registro:", fecha.toLocaleString());
+
+    console.log("\nDatos del usuario");
+    console.log("---------------------");
+    console.log("Nombre:", nombre);
+    console.log("Edad:", edad);
+    console.log("Categoría:", categoria);
+
+    console.log("\nRegistro completado correctamente.");
+    console.log("Gracias por usar el sistema.");
+
+    rl.close();
 
   });
 
 }
 
+// ---------------------------
+// MAIN
+// ---------------------------
 function main() {
 
   console.log("=================================");
@@ -76,6 +85,7 @@ function main() {
   console.log("=================================");
 
   pedirNombre();
+
 }
 
 main();
