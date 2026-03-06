@@ -1,4 +1,10 @@
 // Registro Inteligente de Usuario
+// --------------------------------------------------
+// ARCHIVO PRINCIPAL DEL SISTEMA
+// Este archivo controla el flujo del programa.
+// Las validaciones y lógica del negocio
+// se encuentran separadas en la carpeta services.
+// --------------------------------------------------
 const readline = require("readline");
 
 const validarNombre = require("./services/validarNombre");
