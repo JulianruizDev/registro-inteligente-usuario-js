@@ -63,6 +63,11 @@ function pedirEdad(nombre) {
 }
 
 function main() {
+
+  console.log("=================================");
+  console.log("     Sistema de Registro de Usuario");
+  console.log("=================================");
+
   pedirNombre();
 }
 
