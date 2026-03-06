@@ -48,15 +48,18 @@ function pedirEdad(nombre) {
       return pedirEdad(nombre);
     }
 
-    let categoria = determinarCategoria(edad);
+let categoria = determinarCategoria(edad);
 
-    console.log("\nUsuario registrado correctamente");
-    console.log("-----------------------------");
-    console.log("Nombre:", nombre);
-    console.log("Edad:", edad);
-    console.log("Categoria:", categoria);
+let fecha = new Date();
 
-    rl.close();
+console.log("\nUsuario registrado correctamente");
+console.log("-----------------------------");
+console.log("Fecha de registro:", fecha.toLocaleString());
+console.log("Nombre:", nombre);
+console.log("Edad:", edad);
+console.log("Categoria:", categoria);
+
+rl.close();
 
   });
 
