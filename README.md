@@ -77,3 +77,5 @@ determinarCategoria.js
 📝 Notas
 
 Este proyecto fue desarrollado como parte de mi proceso de aprendizaje para convertirme en Desarrollador de Software Junior, priorizando la comprensión del código, la lógica de programación y la organización básica de un sistema.
+
+Proyecto finalizado.
