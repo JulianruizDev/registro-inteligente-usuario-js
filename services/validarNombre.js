@@ -3,30 +3,27 @@ function validarNombre(nombreInput) {
   let nombre = nombreInput.trim();
 
   if (nombre === "") {
-    console.log("Nombre vacío");
-    return false;
+    return { valido: false, error: "Nombre vacío" };
   }
 
   const patronSoloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/;
 
   if (!patronSoloLetras.test(nombre)) {
-    console.log("El nombre solo puede contener letras");
-    return false;
+    return { valido: false, error: "El nombre solo puede contener letras" };
   }
 
   if (nombre.length < 3) {
-    console.log("Nombre demasiado corto");
-    return false;
+    return { valido: false, error: "Nombre demasiado corto" };
   }
 
-nombre =
-  nombre.charAt(0).toUpperCase() +
-  nombre.slice(1).toLowerCase();
+  nombre =
+    nombre.charAt(0).toUpperCase() +
+    nombre.slice(1).toLowerCase();
 
- return {
-  valido: true,
-  nombre: nombre
-};
+  return {
+    valido: true,
+    nombre: nombre
+  };
 }
 
 module.exports = validarNombre;

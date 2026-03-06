@@ -20,14 +20,14 @@ function pedirNombre() {
 
   rl.question("Ingrese su nombre: ", function(nombre) {
 
-    let resultadoNombre = validarNombre(nombre);
+let resultadoNombre = validarNombre(nombre);
 
-    if (!resultadoNombre.valido) {
-      console.log(resultadoNombre.error);
-      return pedirNombre();
-    }
+if (!resultadoNombre.valido) {
+  console.log(resultadoNombre.error);
+  return pedirNombre();
+}
 
-    pedirEdad(resultadoNombre.nombre);
+pedirEdad(resultadoNombre.nombre);
 
   });
 
